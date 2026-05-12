@@ -1,0 +1,16 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "MERN STACK PROJECT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascrip",
+    "backend",
+    "fullstacl"
+  ],
+  "author": "Priyanshu Sharma",
+  "license": "ISC"
+}
