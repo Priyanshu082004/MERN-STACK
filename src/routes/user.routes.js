@@ -36,4 +36,6 @@ router.route("/update-coverImage").patch (verifyJWT,upload.single("coverImage"),
 router.route("/channel/:username").get(getUserChannelProfile)
 router.route("/watch-history").get(verifyJWT,getWatchHistory)
 
+
+// add more routes as needed 
 export default router
