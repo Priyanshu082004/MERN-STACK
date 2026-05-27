@@ -30,4 +30,6 @@ import userRouter from './routes/user.routes.js'
 
 // routes declration
 app.use("/api/v1/users",userRouter)
+
+//  list all routes here
 export {app}
