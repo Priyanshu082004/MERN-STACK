@@ -328,16 +328,15 @@ const updateUserCoverImage = asyncHandler(async (req,res) => {
     .json(new ApiResponse(200, user, "Cover image updated successfully"))
 })
 
-// const deleteUserAccount = asyncHandler(async (req,res) => {
-//   await User.findByIdAndDelete(req.user._id)
-// if (req.user.avatar) {
-//   await deleteFromCloudinary(req.user.avatar)
-// }
-// if (req.user.coverImage) {
-//   await deleteFromCloudinary(req.user.coverImage)
-// }})
+const deleteUserAvatarandCoverImage = asyncHandler(async (req,res) => {
+  await User.findByIdAndDelete(req.user._id)
+if (req.user.avatar) {
+  await deleteFromCloudinary(req.user.avatar)
+}
+if (req.user.coverImage) {
+  await deleteFromCloudinary(req.user.coverImage)
+}} )
 
-//  marked for todo
 
 
 
@@ -469,4 +468,5 @@ export
     getCurrentUser, updateAccountDetails, 
     updateUserAvatar, updateUserCoverImage ,
      getUserChannelProfile,
-     getWatchHistory}
+     getWatchHistory,
+     deleteUserAvatarandCoverImage}
