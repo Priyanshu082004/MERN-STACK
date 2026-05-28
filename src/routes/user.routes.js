@@ -7,7 +7,8 @@ import { registerUser,
     getCurrentUser, updateAccountDetails, 
     updateUserAvatar, updateUserCoverImage ,
      getUserChannelProfile,
-     getWatchHistoryffyiiig    } from "../controllers/user.controller.js";
+     getWatchHistory,
+     deleteUserAvatarandCoverImage } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 const router= Router()
@@ -35,7 +36,7 @@ router.route("/update-avatar").patch(verifyJWT,upload.single("avatar"),updateUse
 router.route("/update-coverImage").patch (verifyJWT,upload.single("coverImage"),updateUserCoverImage)
 router.route("/channel/:username").get(getUserChannelProfile)
 router.route("/watch-history").get(verifyJWT,getWatchHistory)
-
+router.route("/delete-avatar-and-cover-image").delete(verifyJWT,deleteUserAvatarandCoverImage)
 
 // add more routes as needed 
 export default router
