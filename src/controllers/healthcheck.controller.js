@@ -1,3 +1,16 @@
-// build a healthnbcheck controller that
-// returns a json response with a message "Server is healthy" 
-// and a status code of 200 
+import { ApiError } from "../utils/ApiError.js"
+import { ApiResponse } from "../utils/ApiResponse.js"
+import { asyncHandler } from "../utils/asyncHandler.js"
+
+// ------------------------------------------------------------------
+// HEALTHCHECK — confirms the server is up and responding
+// ------------------------------------------------------------------
+const healthcheck = asyncHandler(async (req, res) => {
+    return res
+        .status(200)
+        .json(new ApiResponse(200, { status: "OK" }, "Server is healthy and running"))
+})
+
+export {
+    healthcheck
+}
